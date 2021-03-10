@@ -52,9 +52,10 @@ fn main() {
     for _idx in 0..secret_word_chars.len() {
         guessed_right_word.push('-');
     }
-    println!("Welcome to CS110L Hangman!");
+    println!("Welcome to CS110L Hangman!\n");
 
     while guess_fail_times < NUM_INCORRECT_GUESSES {
+        println!("=========================");
         println!("The word so far is {}", guessed_right_word.iter().collect::<String>());
         println!("You have guessed the following letters: {}", guessed_word.iter().collect::<String>());
         println!("Please guess a letter:");
@@ -89,5 +90,6 @@ fn main() {
             println!("Congratulations you guessed the secret word: {}!", guessed_right_word.iter().collect::<String>());
             break;
         }
+        println!("=========================\n");
     }
 }
